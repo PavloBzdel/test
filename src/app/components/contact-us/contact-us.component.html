@@ -1,0 +1,60 @@
+<section class="section form-section" id="contact-us">
+  <div class="container">
+    <div class="wrapper">
+      <div class="title">Contact <span>Us</span></div>
+      <div class="button" (click)="onUpPage()">
+        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="25" cy="25" r="25" fill="black" />
+          <path d="M11 31.5L25 18L39 31.5" stroke="white" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </div>
+    </div>
+    <div class="form">
+      <form [formGroup]="userForm" (change)="onFormChange()" (ngSubmit)="onSubmit()">
+        <div class="form-container">
+          <div class="react-form-item">
+            <mat-form-field>
+              <mat-label>Full Name</mat-label>
+              <input class="form-input" matInput formControlName="fullName">
+              <mat-error *ngIf="userForm.hasError('required', 'fullName')">Required Full Name</mat-error>
+              <mat-error *ngIf="userForm.hasError('pattern', 'fullName')">Required Only Word </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="react-form-item">
+            <mat-form-field>
+              <mat-label>Company Name</mat-label>
+              <input class="form-input" matInput formControlName="companyName">
+              <mat-error *ngIf="userForm.hasError('required', 'companyName')">Required Company Name</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="react-form-item">
+            <mat-form-field>
+              <mat-label>Phone Number</mat-label>
+              <input class="form-input" matInput formControlName="phoneNumber">
+              <mat-error *ngIf="userForm.hasError('required', 'phoneNumber')">Required Phone Number</mat-error>
+              <mat-error *ngIf="userForm.hasError('pattern', 'phoneNumber')">Phone Number Invalid</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="react-form-item">
+            <mat-form-field>
+              <mat-label>Email</mat-label>
+              <input class="form-input" matInput formControlName="email">
+              <mat-error *ngIf="userForm.hasError('required', 'email')">Required Email</mat-error>
+              <mat-error *ngIf="userForm.hasError('email', 'email')">Email Invalid</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="react-form-item">
+            <mat-form-field>
+              <mat-label>Write Us Messages</mat-label>
+              <textarea class="form-input" matInput formControlName="messages"></textarea>
+              <mat-error *ngIf="userForm.hasError('required', 'messages')">Required Messages</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="react-form-button"><button class="form-button" type="submit" [disabled]="userForm.invalid || !!formError"
+              (click)="openSnackBar()">Send Message</button></div>
+          <mat-error *ngIf="formError">{{formError}}</mat-error>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

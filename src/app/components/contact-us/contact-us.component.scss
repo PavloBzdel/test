@@ -1,0 +1,123 @@
+$orange-color: #FFBC00;
+$black-color: #111111;
+$gray-color: rgb(129, 129, 129);
+
+$desktop-medium: 1440px;
+$desktop-small: 1140px;
+$tablet: 900px;
+$mobile: 600px;
+$mobile-small: 340px;
+
+.container{
+  padding-bottom: 110px;
+}
+.wrapper{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 85px;
+  .title{
+    font-family: 'Anton', sans-serif;
+    font-size: 50px;
+    line-height: 75px;
+    text-transform: uppercase;
+    text-shadow: 0 4px 2px rgba(0, 0, 0, 0.151);
+    color: $orange-color;
+    span{
+      color: $black-color;
+    }
+  }
+  .button{
+    cursor: pointer;
+    position: relative;
+    svg{
+      transform: translateX(110px) translateY(-20px);
+    }
+  }
+}
+.form{
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 30px;
+  .form-container{
+    padding: 51px 0 0 60px;
+    margin-top: 30px;
+  }
+  .react-form-item{
+    margin-top: 20px;
+  }
+  .form-button{
+    margin: 50px 0 71px;
+    padding: 20px 30px;
+    border-radius: 16px;
+    border: none;
+    color: $black-color;
+    background-color: $orange-color;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    &:disabled{
+      background-color: $gray-color;
+      cursor: not-allowed;
+    }
+  }
+}
+@media (max-width: $mobile-small){
+  .container{
+    margin: 0 15px;
+  }
+  .title{
+    font-size: 32px !important;
+    line-height: 48px;
+  }
+  .wrapper{
+    align-items: center;
+  }
+  .button{
+    svg{
+      transform: translateX(0) translateY(0) !important;
+      width: 70%;
+    }
+  }
+}
+@media (max-width: $mobile){
+  .container{
+    margin: 0 15px;
+  }
+  .wrapper{
+    align-items: center;
+  }
+  .button{
+    svg{
+      transform: translateX(0) translateY(0) !important;
+      width: 90%;
+    }
+  }
+}
+@media (max-width: $tablet){
+  .container{
+    margin: 0 15px;
+  }
+  .button{
+    svg{
+      transform: translateX(0) translateY(0) !important;
+      width: 90%;
+    }
+  }
+}
+@media (max-width: $desktop-small){
+  .container{
+    margin: 0 15px;
+  }
+  .button{
+    svg{
+      transform: translateX(0) translateY(0) !important;
+      width: 90%;
+    }
+  }
+}
+@media (max-width: $desktop-medium){
+  .button{
+    svg{
+      transform: translateX(0) translateY(0) !important;
+      width: 90%;
+    }
+  }
+}
